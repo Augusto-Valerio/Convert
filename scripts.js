@@ -8,6 +8,7 @@ const amount = document.getElementById("amount");
 const currency = document.getElementById("currency");
 const footer = document.querySelector("main footer");
 const description = document.getElementById("description");
+const result = document.getElementById("result");
 
 // Manipulating the input amount to receive only numbers.
 amount.addEventListener("input", () => {
@@ -34,7 +35,14 @@ form.onsubmit = (event) => {
 // Function to convert currency.
 function convertCurrency(amount, price, symbol) {
   try {
+    // Displaying the quote for the selected currency.
     description.textContent = `${symbol} 1 = ${formatCurrencyBRL(price)}`;
+
+    // Calculate the total.
+    let total = amount * price;
+
+    // Displays the total result.
+    result.textContent = `${total} Reais`
 
     //Applies the class that displays the footer to show the result.
     footer.classList.add("show-result");
