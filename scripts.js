@@ -7,6 +7,7 @@ const form = document.querySelector("form");
 const amount = document.getElementById("amount");
 const currency = document.getElementById("currency");
 const footer = document.querySelector("main footer");
+const description = document.getElementById("description");
 
 // Manipulating the input amount to receive only numbers.
 amount.addEventListener("input", () => {
@@ -24,6 +25,7 @@ form.onsubmit = (event) => {
       break;
     case "EUR":
       convertCurrency(amount.value, EUR, "€");
+      break
     case "GBP":
       convertCurrency(amount.value, GBP, "£");
   }
@@ -32,10 +34,12 @@ form.onsubmit = (event) => {
 // Function to convert currency.
 function convertCurrency(amount, price, symbol) {
   try {
+    description.textContent = `${symbol} 1 = ${price}`
+
     //Applies the class that displays the footer to show the result.
     footer.classList.add("show-result");
   } catch (error) {
-    console.log(error)
+    console.log(error);
 
     // Removes the footer class, hiding it from the screen.
     footer.classList.remove("show-result");
