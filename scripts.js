@@ -25,7 +25,7 @@ form.onsubmit = (event) => {
       break;
     case "EUR":
       convertCurrency(amount.value, EUR, "€");
-      break
+      break;
     case "GBP":
       convertCurrency(amount.value, GBP, "£");
   }
@@ -34,7 +34,7 @@ form.onsubmit = (event) => {
 // Function to convert currency.
 function convertCurrency(amount, price, symbol) {
   try {
-    description.textContent = `${symbol} 1 = ${price}`
+    description.textContent = `${symbol} 1 = ${formatCurrencyBRL(price)}`;
 
     //Applies the class that displays the footer to show the result.
     footer.classList.add("show-result");
@@ -45,4 +45,13 @@ function convertCurrency(amount, price, symbol) {
     footer.classList.remove("show-result");
     alert("Não foi possível converter. Tente novamente mais tarde.");
   }
+}
+
+// Formats the currency in Brazilian Real
+function formatCurrencyBRL(value) {
+  // Convert to number to use toLocaleString to format in BRL (R$ 00.00) standard.
+  return Number(value).toLocaleString("pt-BR", {
+    style: "currency",
+    currency: "BRL",
+  });
 }
