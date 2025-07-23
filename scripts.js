@@ -17,5 +17,18 @@ amount.addEventListener("input", () => {
 form.onsubmit = (event) => {
   event.preventDefault();
 
-    console.log(currency.value)
+  switch (currency.value) {
+    case "USD":
+      convertCurrency(amount.value, USD, "US$");
+      break;
+    case "EUR":
+      convertCurrency(amount.value, EUR, "€");
+    case "GBP":
+      convertCurrency(amount.value, GBP, "£");
+  }
 };
+
+// Function to convert currency.
+function convertCurrency(amount, price, symbol) {
+  console.log(amount, price, symbol)
+}
