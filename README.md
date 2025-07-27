@@ -9,7 +9,7 @@
 <br>
 
 <p align="center">
-  <img alt="Preview Music Player" src=".github/preview.png" width="100%">
+  <img alt="Preview Currency converter" src=".github/preview.png" width="100%">
 </p>
 
 ## 🚀 Technologies
