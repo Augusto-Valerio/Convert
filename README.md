@@ -16,7 +16,7 @@
 
 This project was developed with the following technologies:
 
-<img src="https://skillicons.dev/icons?i=html,css,js,git,github&theme=dark" alt="HTML, CSS, GIT, GITHUB," width="190rem"/>
+<img src="https://skillicons.dev/icons?i=html,css,js,git,github&theme=dark" alt="HTML, CSS, JS, GIT, GITHUB," width="190rem"/>
 
 ## 💻 Project
 
